@@ -6,8 +6,15 @@ void main() {
   ));
 }
 
-class ProjectCard extends StatelessWidget {
+class ProjectCard extends StatefulWidget {
   const ProjectCard({Key? key}) : super(key: key);
+
+  @override
+  State<ProjectCard> createState() => _ProjectCardState();
+}
+
+class _ProjectCardState extends State<ProjectCard> {
+  int levelNinja = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +25,15 @@ class ProjectCard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            levelNinja += 1;
+          });
+        },
+        child: const Icon(Icons.add),
+        backgroundColor: Colors.grey[800],
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30, 20, 30, 0),
@@ -58,9 +74,9 @@ class ProjectCard extends StatelessWidget {
                   letterSpacing: 3,
                   fontWeight: FontWeight.bold),
             ),
-            const Text(
-              '10',
-              style: TextStyle(
+            Text(
+              '$levelNinja',
+              style: const TextStyle(
                   color: Colors.amberAccent,
                   fontSize: 24,
                   fontWeight: FontWeight.bold),
