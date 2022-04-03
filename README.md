@@ -1,6 +1,6 @@
-# project_id
+# Project_card
 
-A new Flutter project.
+This project is made with flutter. Is a single application with information of my videogame favorite. if you need help with Flutter, send email to: cgeorgedev@gmail.com
 
 ## Getting Started
 
